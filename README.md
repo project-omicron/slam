@@ -22,35 +22,35 @@ We have a ROS bag with all sensor data.
 
 Here is the list of recorder topics:
 
-	/clicked_point
-	/clock
-	/imu
-	/initialpose
-	/joint_states
-	/move_base_simple/goal
-	/odom
-	/r200/camera/color/camera_info
-	/r200/camera/color/image_raw
-	/r200/camera/depth/camera_info
-	/r200/camera/depth/image_raw
-	/r200/camera/ir/camera_info
-	/r200/camera/ir/image_raw
-	/r200/camera/ir2/camera_info
-	/r200/camera/ir2/image_raw
-	/scan
-	/tf
-	/tf_static
+    /clicked_point
+    /clock
+    /imu
+    /initialpose
+    /joint_states
+    /move_base_simple/goal
+    /odom
+    /r200/camera/color/camera_info
+    /r200/camera/color/image_raw
+    /r200/camera/depth/camera_info
+    /r200/camera/depth/image_raw
+    /r200/camera/ir/camera_info
+    /r200/camera/ir/image_raw
+    /r200/camera/ir2/camera_info
+    /r200/camera/ir2/image_raw
+    /scan
+    /tf
+    /tf_static
 
 
 As you can see, we have a RGB-D camera, LIDAR, IMU, and odometry. This data should be enoght to run most of the SLAM algorithms.
 
 ## For data recording
 
-	You could start by lower velocity. Our goal is to create a great map with the least 
-	amount of passes as possible. Getting 3 loop closures will be sufficient for mapping 
-	the entire environment. You can maximize your loop closures by going over similar 
-	paths two or three times. This allows for the maximization of feature detection, 
-	facilitating faster loop closures!
+    You could start by lower velocity. Our goal is to create a great map with the least 
+    amount of passes as possible. Getting 3 loop closures will be sufficient for mapping 
+    the entire environment. You can maximize your loop closures by going over similar 
+    paths two or three times. This allows for the maximization of feature detection, 
+    facilitating faster loop closures!
 
 ## Ground truth map data
 

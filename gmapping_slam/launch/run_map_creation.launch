@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-	<arg name="rpsbag_path" default="/home/me/rosbag_files/" />
+    <arg name="rpsbag_path" default="/home/me/rosbag_files/" />
 
-	<!-- play the rosbag -->
-	<node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg rpsbag_path)"/>
+    <!-- play the rosbag -->
+    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg rpsbag_path)"/>
 
-	<!-- Finish here to run SLAM -->
-	
+    <!-- Finish here to run SLAM -->
+    
 </launch>
