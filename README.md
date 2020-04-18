@@ -7,7 +7,7 @@ Environment</a>.
 
 # Why GMapping, RTab and Cartographer?
 
-GMapping is one of the most used algorithm in open source comunity. It is a aprt of the default navigation ROs stack.
+GMapping is one of the most used algorithm in open source comunity. It is a aprt of the default navigation ROS stack.
 
 RTab is one of the best SLAM that does not require LIDAR. Taking into the account the costs of the LIDARs, we want to compare how good we can create map and localize without a map.
 
@@ -20,7 +20,29 @@ Cartographer is best SLAM based on the paper.
 
 We have a ROS bag with all sensor data.
 
-ToDo: add topics description of the robot and record the data.
+Here is the list of recorder topics:
+
+	/clicked_point
+	/clock
+	/imu
+	/initialpose
+	/joint_states
+	/move_base_simple/goal
+	/odom
+	/r200/camera/color/camera_info
+	/r200/camera/color/image_raw
+	/r200/camera/depth/camera_info
+	/r200/camera/depth/image_raw
+	/r200/camera/ir/camera_info
+	/r200/camera/ir/image_raw
+	/r200/camera/ir2/camera_info
+	/r200/camera/ir2/image_raw
+	/scan
+	/tf
+	/tf_static
+
+
+As you can see, we have a RGB-D camera, LIDAR, IMU, and odometry. This data should be enoght to run most of the SLAM algorithms.
 
 ## For data recording
 
