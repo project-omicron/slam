@@ -24,7 +24,11 @@ ToDo: add topics description of the robot and record the data.
 
 ## For data recording
 
-	You could start by lower velocity. Our goal is to create a great map with the least amount of passes as possible. Getting 3 loop closures will be sufficient for mapping the entire environment. You can maximize your loop closures by going over similar paths two or three times. This allows for the maximization of feature detection, facilitating faster loop closures!
+	You could start by lower velocity. Our goal is to create a great map with the least 
+	amount of passes as possible. Getting 3 loop closures will be sufficient for mapping 
+	the entire environment. You can maximize your loop closures by going over similar 
+	paths two or three times. This allows for the maximization of feature detection, 
+	facilitating faster loop closures!
 
 ## Ground truth map data
 
