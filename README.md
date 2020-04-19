@@ -5,6 +5,12 @@ Repo to compare different slam algorythms.
 Paper: <a href="Comparison_of_Various_SLAM_RG.pdf">Comparison of Various SLAM Systems for Mobile Robot in an Indoor
 Environment</a>.
 
+# Input data
+
+We have recorded a single lap through the <a href="https://github.com/project-omicron/gazebo_simulation/blob/master/worlds/labyrinth.world">labyrinth.world</a> from the repo <a href="https://github.com/project-omicron/gazebo_simulation">gazebo_simulation</a>.
+
+All data are stored in a ROS bag file that you can download from <a href="https://www.dropbox.com/s/b1sqmqz8ds3gmdw/2020-04-19-14-31-48.bag?dl=0">this link</a>.
+
 # Why GMapping, RTab and Cartographer?
 
 GMapping is one of the most used algorithm in open source comunity. It is a aprt of the default navigation ROS stack.
