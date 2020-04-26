@@ -13,12 +13,15 @@ sudo apt install ros-melodic-rtabmap-ros
 
 # How to run
 
+## Mapping (map generation)
+
 Download the Rosbag from <a href="https://drive.google.com/uc?export=download&confirm=wwQS&id=0B46akLGdg-uaa1dDSlUwWUsyTzQ">here</a>.
 
 Install the package and start ROS.
 
 ```
 mkdir -p catkin_ws/src
+cd catkin_ws/src
 git clone https://github.com/project-omicron/slam.git
 cd ..
 catkin_make
@@ -32,12 +35,15 @@ Go to the directory you unpacked the rosbag and play the bag.
 rosbag play map1.bag
 ```
 
-
 In another terminal start the RTab-SLAM, the script will gebnerate the map.
 
 ```
 roslaunch rtab_slam mapping.launch
 ```
+
+## Localization (localize on the created map)
+
+ToDo
 
 # RTab Database Analysis
 
