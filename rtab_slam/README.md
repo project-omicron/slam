@@ -1,6 +1,8 @@
 # About
 
-ToDo
+Took from here: <a href="http://introlab.github.io/rtabmap/">RTAB official page</a>.
+
+RTAB-Map (Real-Time Appearance-Based Mapping) is a RGB-D, Stereo and Lidar Graph-Based SLAM approach based on an incremental appearance-based loop closure detector. The loop closure detector uses a bag-of-words approach to determinate how likely a new image comes from a previous location or a new location. When a loop closure hypothesis is accepted, a new constraint is added to the map’s graph, then a graph optimizer minimizes the errors in the map. A memory management approach is used to limit the number of locations used for loop closure detection and graph optimization, so that real-time constraints on large-scale environnements are always respected. RTAB-Map can be used alone with a handheld Kinect, a stereo camera or a 3D lidar for 6DoF mapping, or on a robot equipped with a laser rangefinder for 3DoF mapping.
 
 # Dependecies
 
@@ -11,8 +13,31 @@ sudo apt install ros-melodic-rtabmap-ros
 
 # How to run
 
-ToDo
+Download the Rosbag from <a href="https://drive.google.com/uc?export=download&confirm=wwQS&id=0B46akLGdg-uaa1dDSlUwWUsyTzQ">here</a>.
 
+Install the package and start ROS.
+
+```
+mkdir -p catkin_ws/src
+git clone https://github.com/project-omicron/slam.git
+cd ..
+catkin_make
+source devel/setup.bash
+roscore
+```
+
+Go to the directory you unpacked the rosbag and play the bag.
+
+```
+rosbag play map1.bag
+```
+
+
+In another terminal start the RTab-SLAM, the script will gebnerate the map.
+
+```
+roslaunch rtab_slam mapping.launch
+```
 
 # RTab Database Analysis
 
@@ -49,7 +74,9 @@ When it comes time to design your own environment, this tool can be a good resou
 
 # Useful links
 
+- http://introlab.github.io/rtabmap/
 - http://wiki.ros.org/rtabmap_ros/Tutorials/SetupOnYourRobot
 - http://wiki.ros.org/rtabmap_ros
 - http://wiki.ros.org/rtabmap_ros/Tutorials/Advanced%20Parameter%20Tuning
 - https://github.com/introlab/rtabmap/blob/master/corelib/include/rtabmap/core/Parameters.h
+- https://github.com/introlab/rtabmap_ros/blob/master/launch/rtabmap.launch
