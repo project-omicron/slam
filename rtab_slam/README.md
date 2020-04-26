@@ -41,6 +41,13 @@ In another terminal start the RTab-SLAM, the script will gebnerate the map.
 roslaunch rtab_slam mapping.launch
 ```
 
+
+Once the bag finished to lay, guti kill ROS processes.  
+The geberated map will be stored in
+```
+~/.ros/rtabmap.db
+```
+
 ## Localization (localize on the created map)
 
 ToDo
