@@ -42,15 +42,24 @@ roslaunch rtab_slam mapping.launch
 ```
 
 
-Once the bag finished to lay, guti kill ROS processes.  
-The geberated map will be stored in
+Once the bag finished to play, just kill the ROS processes.  
+The generated map will be stored in:
 ```
 ~/.ros/rtabmap.db
 ```
 
 ## Localization (localize on the created map)
 
-ToDo
+to run localization, execute 
+```
+roslaunch rtab_slam localization.launch
+```
+
+In RViz you need to add a visualization of the robot pose.
+Click:
+```
+Add->By topic->/rtabmap/localization_pose/PoseWithCovariance
+```
 
 # RTab Database Analysis
 
