@@ -6,6 +6,7 @@ Configuration below works fine on the bag-file downloaded by provided link, but 
 # Dependecies
 
 ```
+sudo apt install ros-melodic-slam-gmapping
 sudo apt install ros-melodic-map-server
 ```
 
