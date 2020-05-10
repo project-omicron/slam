@@ -12,7 +12,7 @@ sudo apt install ros-melodic-cartographer-rviz
 
 # How to run
 
-### How to run cartographer in online mode
+## How to run cartographer in online mode
 
 Run simulation:
 
@@ -40,6 +40,20 @@ RViz should show the loaded map. The moving robot should be localized in the map
 
 ![cartographer online localization](doc/img/carto_localization.jpg)
 
+
+## How to run cartographer in offline mode
+
+Record 2 rosbags: one for mapping and one for localization.
+Alternatively one can download it from [here](https://yadi.sk/d/8ltPdb6G0E7dKw)
+
+Run offline mapping:
+
+    roslaunch cartographer_slam carto_slam_offline_mapping.launch bag:=`realpath bag_for_cartographer____2020-05-10-13-21-46.bag`
+
+Cartographer will create a file with `.pbstream` extension. 
+We can use if for localization now:
+
+    roslaunch cartographer_slam carto_slam_offline_localization.launch bag:=`realpath bag_for_cartographer____2020-05-10-13-24-01.bag` load_state_filename:=`realpath bag_for_cartographer____2020-05-10-13-21-46.bag.pbstream`
 
 # Useful links
 
