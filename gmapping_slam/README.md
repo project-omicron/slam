@@ -31,16 +31,16 @@ roscore
 Go to the directory you unpacked the rosbag and play the bag.
 
 ```
-rosbag play map1.bag
+rosbag play --clock map1.bag
 ```
 
-In another terminal start the RTab-SLAM, the script will generate the map.
+In another terminal start the gmapping-SLAM, the script will generate the map.
 
 ```
-roslaunch gmapping_slam gmapping_map1.launch
+roslaunch gmapping_slam gmapping_without_loc.launch
 ```
 
-Once the bag finished to play, use map_server to save the map published in topic gmapping_group/map as gmapping_map.pgm:
+Once the bag finished to play, use map_server to save the map published in topic map as created_map.pgm:
 ```
-rosrun map_server map_saver -f gmapping_map1 map:=/gmapping_group/map
+rosrun map_server map_saver -f created_map
 ```

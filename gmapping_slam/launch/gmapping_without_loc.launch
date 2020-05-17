@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>    
+    <arg name="rviz" default="true" />
+
+    <arg name="odometry_topic" default="/base_controller/odom"/>
+    <arg name="tf_topic" default="tf" />
+    <arg name="lidar_scan" default="/base_scan"/>
+
+    <param name="use_sim_time" type="bool" value="True"/>
+
+    <remap from="scan" to="$(arg lidar_scan)"/>
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    </node>
+
+</launch>
