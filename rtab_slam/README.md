@@ -72,9 +72,11 @@ Drive around, stop recording.
 
 ### Running mapping on the recorded data
 
-(Optional) download [sample ros bag](https://yadi.sk/d/8Dj94ElZyko1Bg)
+(Optional) download 
+[sample ros bag](https://yadi.sk/d/8Dj94ElZyko1Bg), 
+[sample rosbag for localization](https://yadi.sk/d/iPH0Qg02T6zKvA).
 
-Play ros bag:
+Play ros bag. For example:
 
     rosbag play ./bag_for_rtab____2020-05-24-14-53-24.bag
 
@@ -91,7 +93,8 @@ How it could look like:
 
 ### Running localization on the recorded data
 
-With some other rosbag one can run localization later
+With some other ros bag one can run localization. 
+
 Run localization:
 
     roslaunch rtab_slam localization.launch odometry_topic:=/odom lidar_scan:=/scan camera_rgb:=/r200/camera/color/image_raw camera_depth:=/r200/camera/depth/image_raw camera_info:=/r200/camera/color/camera_info base_footprint:=chassis
