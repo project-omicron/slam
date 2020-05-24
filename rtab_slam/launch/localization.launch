@@ -12,6 +12,7 @@
     <arg name="camera_depth" default="/data_throttled_image_depth"/>
     <arg name="camera_info" default="/data_throttled_camera_info"/>
     <arg name="database_path"     default="~/.ros/rtabmap.db"/>
+    <arg name="base_footprint" default="base_footprint"/>
 
     <param name="use_sim_time" type="bool" value="True"/>
 
@@ -19,7 +20,7 @@
     <!-- Mapping Node -->
     <group ns="rtabmap">
         <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="$(arg rtabmap_args)">
-            <param name="frame_id" type="string" value="base_footprint"/>
+            <param name="frame_id" type="string" value="$(arg base_footprint)"/>
 
             <param name="database_path"       type="string" value="$(arg database_path)"/>
             
@@ -81,7 +82,7 @@
             <param name="subscribe_depth" type="bool" value="true"/>
             <param name="subscribe_scan"  type="bool" value="true"/>
             <param name="queue_size"      type="int" value="10"/>
-            <param name="frame_id"        type="string" value="base_footprint"/>
+            <param name="frame_id"        type="string" value="$(arg base_footprint)"/>
 
             <!-- Topics we subscribe -->
             <remap from="odom"              to="$(arg odometry_topic)"/>

@@ -7,8 +7,7 @@ RTAB-Map (Real-Time Appearance-Based Mapping) is a RGB-D, Stereo and Lidar Graph
 # Dependecies
 
 ```
-sudo apt install ros-melodic-rtabmap
-sudo apt install ros-melodic-rtabmap-ros
+sudo apt install ros-melodic-rtabmap ros-melodic-rtabmap-ros
 ```
 
 # How to run
@@ -35,7 +34,7 @@ Go to the directory you unpacked the rosbag and play the bag.
 rosbag play map1.bag
 ```
 
-In another terminal start the RTab-SLAM, the script will gebnerate the map.
+In another terminal start the RTab-SLAM, the script will generate the map.
 
 ```
 roslaunch rtab_slam mapping.launch
@@ -60,6 +59,49 @@ Click:
 ```
 Add->By topic->/rtabmap/localization_pose/PoseWithCovariance
 ```
+
+## Running on data from simulator 
+
+### Data recording
+
+Run simulator, run recording:
+    
+    rosbag record  -o bag_for_rtab___  --all --exclude="/r200/camera/ir(.*)"
+    
+Drive around, stop recording.
+
+### Running mapping on the recorded data
+
+(Optional) download [sample ros bag](https://yadi.sk/d/8Dj94ElZyko1Bg)
+
+Play ros bag:
+
+    rosbag play ./bag_for_rtab____2020-05-24-14-53-24.bag
+
+Run mapping
+    
+    roslaunch rtab_slam mapping.launch odometry_topic:=/odom lidar_scan:=/scan camera_rgb:=/r200/camera/color/image_raw camera_depth:=/r200/camera/depth/image_raw camera_info:=/r200/camera/color/camera_info base_footprint:=chassis
+    
+the map will be saved on the exit from the mapping at `~/.ros/rtabmap.db`
+
+How it could look like:
+
+![rtab rviz](images/rtab-labyrinth-rviz.jpg)
+![rtab viewer](images/rtab-labyrinth-viewer.jpg)
+
+### Running localization on the recorded data
+
+With some other rosbag one can run localization later
+Run localization:
+
+    roslaunch rtab_slam localization.launch odometry_topic:=/odom lidar_scan:=/scan camera_rgb:=/r200/camera/color/image_raw camera_depth:=/r200/camera/depth/image_raw camera_info:=/r200/camera/color/camera_info base_footprint:=chassis
+
+### Notes
+
+* When I run mapping again after running localization, the mapping doesn't seem to be working. In the menu of RTab Viewer one can switch mapping manually. Also restating the system helped.
+* In the localization mode the map sometimes is not shown.
+
+
 
 # RTab Database Analysis
 
