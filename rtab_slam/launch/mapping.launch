@@ -10,15 +10,14 @@
     <arg name="camera_rgb" default="/camera/rgb/image_raw"/>
     <arg name="camera_depth" default="/camera/depth/image_raw"/>
     <arg name="camera_info" default="/camera/rgb/camera_info"/>
+    <arg name="frame_id" default="chassis"/>
 
     <param name="use_sim_time" type="bool" value="True"/>
 
     <!-- Mapping Node -->
     <group ns="rtabmap">
-        <node name="republish" type="republish" pkg="image_transport" output="screen" args="compressedDepth in:=/camera/depth/image_raw/ raw out:=/camera/depth/image_raw" />
-
         <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start">
-            <param name="frame_id" type="string" value="chassis"/>
+            <param name="frame_id" type="string" value="$(arg frame_id)"/>
             
             <param name="subscribe_depth" type="bool" value="true"/>
             <param name="subscribe_scan"  type="bool" value="true"/>
@@ -63,7 +62,7 @@
             <param name="subscribe_depth" type="bool" value="true"/>
             <param name="subscribe_scan"  type="bool" value="true"/>
             <param name="queue_size"      type="int" value="10"/>
-            <param name="frame_id"        type="string" value="chassis"/>
+            <param name="frame_id"        type="string" value="$(arg frame_id)"/>
 
             <!-- Topics we subscribe -->
             <remap from="odom"              to="$(arg odometry_topic)"/>
